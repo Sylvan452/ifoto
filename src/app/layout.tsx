@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '../../components/Header';
+import PromptInput from '../../components/PromptInput';
 
 export const metadata: Metadata = {
   title: 'Ifoto',
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Header />
+        <PromptInput />
         {children}
       </body>
     </html>
