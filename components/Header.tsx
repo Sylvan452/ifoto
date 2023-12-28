@@ -7,7 +7,7 @@ function Header() {
       <div className="flex space-x-2 items-center">
         <Image src="/Ifoto_logo.png" height={50} width={100} alt="logo" />
         <div>
-          <h1 className="font-bold text-red-500">
+          <h1 className="font-bold">
             <span>AI</span> Image Generator
           </h1>
           <h2 className="text-xs">
