@@ -5,7 +5,7 @@ export async function POST(request: Request) {
     const prompt = res.prompt;
 
     //connect to microsoft azure function endpoint
-    const response = await fetch('http://127.0.0.1:7071/api/generateImage', {
+    const response = await fetch('https://ai-image-generator-ifoto.azurewebsites.net/api/generateimage', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

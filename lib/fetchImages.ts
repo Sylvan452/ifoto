@@ -1,5 +1,5 @@
 const fetchImages = () =>
-    fetch("/api/suggestion", {
+    fetch("/api/getImages", {
         cache: 'no-store'
     }).then(res => res.json())
 

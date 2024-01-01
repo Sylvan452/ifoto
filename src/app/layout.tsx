@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '../../components/Header';
 import PromptInput from '../../components/PromptInput';
+import ClientProvider from '../../components/ClientProvider';
 
 export const metadata: Metadata = {
   title: 'Ifoto',
@@ -16,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Header />
-        <PromptInput />
-        {children}
+        <ClientProvider>
+          <Header />
+          <PromptInput />
+          {children}
+        </ClientProvider>
       </body>
     </html>
   );

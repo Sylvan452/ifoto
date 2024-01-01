@@ -5,7 +5,13 @@ function Header() {
   return (
     <header className="flex p-5 justify-between sticky top-0 bg-white z-50 shadow-md">
       <div className="flex space-x-2 items-center">
-        <Image src="/Ifoto_logo.png" height={50} width={100} alt="logo" />
+        <Image
+          src="/Ifoto_logo.png"
+          alt="Ifoto Logo"
+          height={50}
+          width={100}
+          className="w-full rounded-sm shadow-2xl drop-shadow-lg -z-10"
+        />
         <div>
           <h1 className="font-bold">
             <span>AI</span> Image Generator

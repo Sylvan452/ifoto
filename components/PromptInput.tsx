@@ -3,6 +3,8 @@
 import { FormEvent, useState } from 'react';
 import fetchSuggestionFromChatGPT from '../lib/fetchSuggestionFromChatGPT';
 import useSWR from 'swr';
+import fetchImages from '../lib/fetchImages';
+import toast, { Toast } from 'react-hot-toast';
 
 function PromptInput() {
   const [input, setInput] = useState('');
@@ -15,12 +17,24 @@ function PromptInput() {
   } = useSWR('/api/suggestion', fetchSuggestionFromChatGPT, {
     revalidateOnFocus: false,
   });
+
+  const { mutate: updateImages } = useSWR('/api/getImages', fetchImages, {
+    revalidateOnFocus: false,
+  });
+
   const submitPrompt = async (useSuggestion?: boolean) => {
     const inputPrompt = input;
     setInput('');
 
     //p is the prompt to send to API
     const p = useSuggestion ? suggestion : inputPrompt;
+
+    const notificationPrompt = p;
+    const notificationPromptShort = notificationPrompt.slice(0, 20);
+
+    const notification = toast.loading(
+      `I'm creating your painting: ${notificationPromptShort}...`,
+    );
 
     const res = await fetch('/api/generateImage', {
       method: 'POST',
@@ -31,6 +45,16 @@ function PromptInput() {
     });
 
     const data = await res.json();
+
+    if (data.error) {
+      toast.error(data.error);
+    } else {
+      toast.success(`Your AI drawing is ready`, {
+        id: notification,
+      });
+    }
+
+    updateImages();
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
