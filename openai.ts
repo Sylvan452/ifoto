@@ -1,11 +1,8 @@
-import OpenAI from 'openai';
+import OpenAI from "openai";
 
 const openai = new OpenAI({
     organization: process.env.OPEN_AI_ORGANIZATION,
-    apiKey: process.env.OPENAI_API_KEY,
-  
+    apiKey: process.env.OPEN_AI_KEY,
 });
-
-
 
 export default openai;
