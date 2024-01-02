@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: 'Ifoto-AI Generated Image App',
 };
 
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({
   children,
 }: {
