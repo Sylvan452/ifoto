@@ -42,7 +42,7 @@ function Images() {
           <div
             key={image.name}
             className={`relative cursor-help 
-             ${i === 0 && 'md:col-span-2 row-span-2'} 
+             ${i === 0 && 'md:col-span-2 md:row-span-2'} 
              hover:scale-[103%] transition-transform duration-200
             ease-in-out`}
           >
