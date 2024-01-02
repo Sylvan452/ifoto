@@ -4,7 +4,7 @@ const axios = require("axios");
 const generateSASToken = require("../../lib/generateSASToken");
 
 const { BlobServiceClient } = require("@azure/storage-blob");
-const { request } = require("http");
+const { request } = require("https");
 
 const accountName = process.env.accountName;
 

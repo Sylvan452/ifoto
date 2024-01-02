@@ -6,7 +6,7 @@ const {
 } = require("@azure/storage-blob");
 
 const generateSASToken = require("../../lib/generateSASToken");
-const { request } = require("http");
+const { request } = require("https");
 
 const accountName = process.env.accountName;
 const accountKey = process.env.accountKey;
