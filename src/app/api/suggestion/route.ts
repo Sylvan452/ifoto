@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
     //connect to microsoft azure function endpoint
     const response = await fetch("https://ai-image-generator-ifoto.azurewebsites.net/api/getchatgptsuggestion", {
