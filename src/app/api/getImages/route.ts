@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
     const response = await fetch('https://ai-image-generator-ifoto.azurewebsites.net/api/getimages', {
         cache: 'no-cache'
