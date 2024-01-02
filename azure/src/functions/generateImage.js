@@ -10,7 +10,7 @@ const accountName = process.env.accountName;
 
 const containerName = "images";
 
-app.http('generateImage', {
+app.https('generateImage', {
     methods: ['POST'],
     authLevel: 'anonymous',
     handler: async (request) => {

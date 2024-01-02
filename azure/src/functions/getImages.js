@@ -23,7 +23,7 @@ const blobServiceClient = new BlobServiceClient(
     sharedKeyCredential
 );
 
-app.http("getImages", {
+app.https("getImages", {
     methods: ['GET'],
     authLevel: 'anonymous',
     handler: async (request, context) => {
